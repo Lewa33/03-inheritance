@@ -5,7 +5,10 @@ import org.apache.logging.log4j.Logger;
 
 import static ohm.softa.a03.Cat.State.*;
 
+// Klass Cat
 public class Cat {
+
+	// Logger ist für die Ausgabe?
 	private static final Logger logger = LogManager.getLogger();
 
 	// valid states
@@ -19,10 +22,10 @@ public class Cat {
 	private final int awake;
 	private final int digest;
 
+	State currentState;
 	private final String name;
 
-	private int time = 0;
-	private int timeDigesting = 0;
+
 
 	public Cat(String name, int sleep, int awake, int digest) {
 		this.name = name;
@@ -32,7 +35,7 @@ public class Cat {
 	}
 
 	public void tick(){
-		logger.info("tick()");
+		logger.info("tick()"); //gibt ein tick aus?
 		time = time + 1;
 
 		switch (state) {
